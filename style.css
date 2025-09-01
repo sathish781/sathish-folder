@@ -1,64 +1,96 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f7f9fc;
-  color: #333;
-  text-align: center;
+:root {
+  --bg:#f3fff2;
+  --card:#ffffff;
+  --accent:#2e8b57;
+  --muted:#6b6b6b;
+  --glass: rgba(255,255,255,0.6);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(120deg,#e8f8ef 0%, #e6f0ff 100%);
+  padding:24px;
+}
+.container{
+  width:100%;
+  max-width:1000px;
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:24px;
+  align-items:center;
+}
+.brand{
+  background:var(--card);
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(46,139,87,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.brand h1{margin:0;color:var(--accent);font-size:28px}
+.brand p{margin:0;color:var(--muted)}
+
+form, .dashboard, .suggestions{
+  background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.8));
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.06);
+}
+label{display:block;font-weight:600;margin-bottom:6px;color:#163b2a}
+.field{margin-bottom:14px}
+input[type="text"], input[type="password"], input[type="number"], textarea, select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid #e6e6e6;
+  outline:none;
+  font-size:14px
+}
+textarea{min-height:80px;resize:vertical}
+.row{display:flex;gap:12px}
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer
+}
+.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+.hidden{display:none}
+
+ul.fruit-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px
+}
+ul.fruit-list li{
+  background:var(--card);
+  padding:12px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.04)
+}
+ul.fruit-list li span{
+  display:block;
+  font-size:15px;
+  font-weight:600;
+  color:#2c2c2c;
+  margin-top:6px
 }
 
-/* Header */
-header {
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  padding: 20px;
-  color: white;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-/* Fruit Section */
-.fruit-list {
-  margin: 20px;
-}
-
-.fruits button {
-  margin: 10px;
-  padding: 12px 20px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  background: #ffb347;
-  color: white;
-  transition: 0.3s;
-}
-
-.fruits button:hover {
-  background: #ff7e5f;
-  transform: scale(1.1);
-}
-
-/* Info Section */
-.fruit-info {
-  margin: 20px;
-  padding: 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-  display: inline-block;
-  min-width: 250px;
-}
-
-/* Footer */
-footer {
-  margin-top: 30px;
-  padding: 15px;
-  background: #333;
-  color: white;
+@media (max-width:880px){
+  .container{grid-template-columns:1fr;}
 }

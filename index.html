@@ -1,40 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit fit</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FruitFit — Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>🍎 Fruit Fit</h1>
-    <p>Eat Healthy, Stay Fit!</p>
-  </header>
+  <div class="container">
+    <div class="brand">
+      <h1>FruitFit</h1>
+      <p>Healthy habits start small. Log in, set a goal, and discover fruits tailored to your needs.</p>
+    </div>
 
-  <main>
-    <section class="fruit-list">
-      <h2>Select a Fruit</h2>
-      <div class="fruits">
-        <button onclick="showFruit('Apple')">Apple 🍏</button>
-        <button onclick="showFruit('Banana')">Banana 🍌</button>
-        <button onclick="showFruit('Orange')">Orange 🍊</button>
-        <button onclick="showFruit('Mango')">Mango 🥭</button>
-        <button onclick="showFruit('Strawberry')">Strawberry 🍓</button>
-      </div>
-    </section>
+    <div>
+      <!-- LOGIN / REGISTER CARD -->
+      <form id="authForm">
+        <h2 id="formTitle">Login to FruitFit</h2>
 
-    <section class="fruit-info">
-      <h2>Fruit Info</h2>
-      <div id="fruitDetails">Choose a fruit to see details...</div>
-    </section>
-  </main>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required />
+        </div>
 
-  <footer>
-    <p>© 2025 Fruit Fit | Stay Healthy 🍇</p>
-  </footer>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="row">
+            <input id="password" type="password" placeholder="Choose a password" required />
+            <button id="togglePw" type="button" class="secondary">Show</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age">Age</label>
+          <input id="age" type="number" min="5" max="120" placeholder="Your age" required />
+        </div>
+
+        <div class="field">
+          <label for="goal">Set Goal</label>
+          <select id="goal">
+            <option value="">-- choose a goal --</option>
+            <option value="skin_care">Skin Care</option>
+            <option value="weight_loss">Weight Loss</option>
+            <option value="weight_gain">Weight Gain</option>
+            <option value="general_health">General Health</option>
+            <option value="other">Other (write below)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="goalOther">If "Other", describe your goal (optional)</label>
+          <textarea id="goalOther" placeholder="e.g. reduce sugar, try smoothies"></textarea>
+        </div>
+
+        <div class="row" style="margin-top:8px;">
+          <button type="submit" class="btn">Login / Save</button>
+          <button id="logoutBtn" type="button" class="secondary hidden">Logout</button>
+        </div>
+
+        <p id="msg" class="small" style="margin-top:12px;color:#9b2b2b"></p>
+      </form>
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="dashboard hidden">
+        <h2>Welcome, <span id="userName">Friend</span> 🍎</h2>
+        <p class="small">Age: <strong id="userAge">-</strong></p>
+        <p class="small">Goal: <strong id="userGoal">-</strong></p>
+        <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+          <button id="editBtn" class="btn secondary">Edit Profile</button>
+          <button id="signoutBtn" class="btn">Sign Out</button>
+        </div>
+      </section>
+
+      <!-- FRUIT SUGGESTIONS -->
+      <section id="suggestions" class="suggestions hidden">
+        <h2>Suggested Fruits for You 🍇</h2>
+        <ul id="fruitList" class="fruit-list"></ul>
+      </section>
+    </div>
+  </div>
 
   <script src="script.js"></script>
-    
 </body>
 </html>
