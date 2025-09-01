@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fruit fit</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>🍎 Fruit Fit</h1>
+    <p>Eat Healthy, Stay Fit!</p>
+  </header>
+
+  <main>
+    <section class="fruit-list">
+      <h2>Select a Fruit</h2>
+      <div class="fruits">
+        <button onclick="showFruit('Apple')">Apple 🍏</button>
+        <button onclick="showFruit('Banana')">Banana 🍌</button>
+        <button onclick="showFruit('Orange')">Orange 🍊</button>
+        <button onclick="showFruit('Mango')">Mango 🥭</button>
+        <button onclick="showFruit('Strawberry')">Strawberry 🍓</button>
+      </div>
+    </section>
+
+    <section class="fruit-info">
+      <h2>Fruit Info</h2>
+      <div id="fruitDetails">Choose a fruit to see details...</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Fruit Fit | Stay Healthy 🍇</p>
+  </footer>
+
+  <script src="script.js"></script>
     
 </body>
 </html>
