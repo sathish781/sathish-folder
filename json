@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Oats with Fruits",
+    "category": "Breakfast",
+    "calories": 350,
+    "protein": 10,
+    "carbs": 60,
+    "fat": 6,
+    "tags": ["vegetarian", "high-fiber"],
+    "recipe": "Mix oats with milk, add fruits and honey."
+  },
+  {
+    "id": 2,
+    "name": "Grilled Chicken Salad",
+    "category": "Lunch",
+    "calories": 450,
+    "protein": 35,
+    "carbs": 20,
+    "fat": 18,
+    "tags": ["gluten-free", "high-protein"],
+    "recipe": "Grill chicken and mix with salad greens and olive oil."
+  },
+  {
+    "id": 3,
+    "name": "Greek Yogurt & Nuts",
+    "category": "Snack",
+    "calories": 200,
+    "protein": 12,
+    "carbs": 15,
+    "fat": 8,
+    "tags": ["vegetarian", "low-carb"],
+    "recipe": "Mix Greek yogurt with nuts."
+  },
+  {
+    "id": 4,
+    "name": "Salmon with Veggies",
+    "category": "Dinner",
+    "calories": 550,
+    "protein": 40,
+    "carbs": 20,
+    "fat": 30,
+    "tags": ["gluten-free", "pescatarian"],
+    "recipe": "Bake salmon and serve with steamed vegetables."
+  }
+]
